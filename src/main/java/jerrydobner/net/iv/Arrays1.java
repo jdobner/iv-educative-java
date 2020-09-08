@@ -13,13 +13,13 @@ public class Arrays1 {
       }
 
     public static void main2(String[] args) {
-        var result = findSmallesContiguousGreaterThan(7, new int[] { 2, 1, 5, 2, 3, 2 });
-        result = findSmallesContiguousGreaterThan(7, new int[] { 2, 1, 5, 2, 8 });
-        result = findSmallesContiguousGreaterThan(8, new int[] { 3, 4, 1, 1, 6 });
+        var result = findSmallestContiguousGreaterThan(7, new int[] { 2, 1, 5, 2, 3, 2 });
+        result = findSmallestContiguousGreaterThan(7, new int[] { 2, 1, 5, 2, 8 });
+        result = findSmallestContiguousGreaterThan(8, new int[] { 3, 4, 1, 1, 6 });
         final Random r = new Random();
         for (int i = 0; i < 10; i++) {
             int[] numbers = IntStream.generate(() -> r.nextInt(7)).limit(10).toArray();
-            result = findSmallesContiguousGreaterThan(r.nextInt(9) + 6, numbers);
+            result = findSmallestContiguousGreaterThan(r.nextInt(9) + 6, numbers);
         }
     }
     
@@ -41,7 +41,7 @@ public class Arrays1 {
         
     }
 
-    static int findSmallesContiguousGreaterThan(int s, int[] numbers)  {
+    static int findSmallestContiguousGreaterThan(int s, int[] numbers)  {
         System.out.println(
             "Searching for min sum of " + s + " in " + Arrays.toString(numbers));
         for (int chunkSize = 2; chunkSize <= numbers.length; chunkSize++) {
